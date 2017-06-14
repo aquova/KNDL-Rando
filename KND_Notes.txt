@@ -1,0 +1,38 @@
+Kirby's Nightmare in Dreamland Notes:
+
+Kirby's Mouth Byte Address: 0x217A
+
+Values:
+
+
+00 - Default
+01 - Fire
+02 - Spark
+03 - Cutter
+04 - Sword
+05 - Burning
+06 - Laser
+07 - Mike
+08 - Wheel
+09 - Hammer
+0A - Parasol
+0B - Sleep
+0C - Needle
+0D - Ice
+0E - Freeze
+0F - Hi-Jump
+10 - Beam
+11 - Stone
+12 - Ball
+13 - Tornado
+14 - Crash
+15 - Light
+16 - Backdrop
+17 - Throw
+18 - UFO
+19 - Star rod (glitched)
+1A - Wait (Some multiplayer thing)
+1B - Normal (Glitched)
+1C - ???
+1D - ???
+1E - ???
