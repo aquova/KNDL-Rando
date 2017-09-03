@@ -1,6 +1,6 @@
 Kirby's Nightmare in Dreamland Notes:
 
-Kirby's Mouth Byte Address: 0x217A
+Kirby's Mouth Byte Address: 0x217B
 
 Values:
 
