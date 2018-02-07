@@ -1,0 +1,174 @@
+==========================================
+== Kirby's Nightmare in Dreamland Notes ==
+==========================================
+
+Written by Aquova
+
+-------------------------------------------------------------------------------
+Kirby's Mouth Byte Address: 0x217B
+
+Values:
+
+00 - Default
+01 - Fire
+02 - Spark
+03 - Cutter
+04 - Sword
+05 - Burning
+06 - Laser
+07 - Mike
+08 - Wheel
+09 - Hammer
+0A - Parasol
+0B - Sleep
+0C - Needle
+0D - Ice
+0E - Freeze
+0F - Hi-Jump
+10 - Beam
+11 - Stone
+12 - Ball
+13 - Tornado
+14 - Crash
+15 - Light
+16 - Backdrop
+17 - Throw
+18 - UFO
+19 - Star rod (glitched)
+1A - Wait (Some multiplayer thing)
+1B - Normal (Glitched)
+1C - ???
+1D - ???
+1E - ???
+
+-------------------------------------------------------------------------------
+
+Door values:
+
+KND Door Data:
+--
+Door Data: 0x???-0x???
+Made of seven? bytes
+First byte: ?
+Second byte: ?
+Third byte: X coordinate?
+Fourth byte: ?
+Fifth byte: Y coordinate?
+Sixth byte: ?
+Seventh byte: Destination door value?
+--
+
+Beginning at 0x3A24CC is the Level 1-1 Room 1 Door
+
+---
+
+Seventh byte door values:
+
+00 - Level 1-1 entrance
+01 - World 1 Map 'previous' door
+02 - World 1 Boss
+03 - Bomb Rally mini-game
+04 - Air Grind mini-game
+05 - Quick Draw mini-game
+06 - Door didn't work
+07 - Wheelie Arena, but museum info played
+08 - Actual Wheelie Arena
+09 - Game freezes
+0A - Game freezes
+0B - Game freezes
+0C - Game freezes
+0D - Game freezes
+0E - Game freezes
+0F - Game freezes
+From here on out, the game will freeze...
+10 -
+
+---
+
+I didn't look at the enemies from
+0x100000 - 0x370000
+
+0x0-0x10000 Crashes immediately
+0x10000-0x20000 Crashes on file select
+0x20000-0x30000 Crashes after selecting file
+0x30000-0x40000 Crashes after selecting file
+0x40000-0x50000 Crashes after world 1 animation
+0x50000-0x60000 Crashes after Kirby hits the ground in level 1
+0x60000-0x70000 Crashes after world 1 animation
+0x70000-0x80000 Crashes after world 1 animation
+0x80000-0x90000 Crashes right when first enemy loads
+0xB0000-0xC0000 Crashes immediately
+0xC0000-0xD0000 Crashes immediately
+
+0xD0000-0xD5000 Messes with palettes, warp star is black for example
+
+0xD7000-0xD7500 Entire World 1 map is stone, can't move
+0xD7500-0xD7600 Area around Level 1-1 door is stone, but there is a space for Kirby to move. Seems to move 'stone' region around
+0xD7600-0xD7700 Similar to above
+
+0xDA000-0xDF000 Game crashes when Kirby lands
+
+0x0E0000-0x0F0000 Crashes shortly after entering level 1-1
+
+170000-176000
+Game freezes when Kirby lands
+
+Changing 0x24BCB2 glitches out the ability enemies
+That row is of interest
+
+Similar issue between 250000 and 260000
+
+Corrupting 0x35D000-0x35E000 seems to have redircted Stage 1-1 Door to End of level
+(Screen went white, but the music played)
+
+0x3A24A0-0x3A2500 Replacing 0F with 35 made Door 1-1 vanish
+
+It appears 0x35D9D0-0x35DAF0 is the tile data for room 1-1?
+- Doesn't seem useful for my purposes, moving on
+
+0x3A0000-0x3B0000 Crashes game immediately
+
+0x3B0000-0x3C0000 Messes with the level sprites, but game is still playable
+
+0x530000-0x540000 Messes with the level palettes, and it looks really cool.
+The 0x5XXXXX block seems to do with graphics
+
+0x590000-0x5A0000 Glitched door graphics
+Door is still functional, however
+
+0x5B0000-0x5C0000 Crashed game on World 1 animation
+0x600000-0x610000 Crashes immediately
+
+0x71A000-0x71F000 Crashes after hitting start
+
+0x720000-0x730000 Freezes after displaying HAL logo
+0x730000-0x740000 Crashes immediately
+
+0x740000-0x745000 Game resets once first Waddle Dee loads
+Similar pattern for each 0x001000 block within this section
+
+0x74C000-0x74D000 Crashes once Kirby lands, door missing.
+Breaking it down, door and other sprites will gitch in and out, but still functional
+
+0x750000-0x760000 Many sprites missing, crashes on menu select
+0x760000-0x770000 Crashes after World 1 animation
+
+0x7E0000-0x7F0000 Crashes after selecting file
+This is the end of the game.
+-------------------------------------------------------------------------------
+
+Enemy values:
+
+---
+Try replacing 0x10 (beam) with 0x01 (fire)
+
+Still works for 0x100000-0x300000, 0x400000-0x700000
+0x3A200-0x3A300 - World map geometry is all messed up, couldn't tell
+Possibly more issues from 0x3A300-0x40000
+
+Background music was gone from 0x600000-0x700000
+---
+
+Waddle Dee (Level 1-1 Room 1) - 0x742A4C
+-------------------------------------------------------------------------------
+
