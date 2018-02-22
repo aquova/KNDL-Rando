@@ -47,41 +47,48 @@ Door values:
 
 KND Door Data:
 --
-Door Data: 0x???-0x???
-Made of seven? bytes
+Door Data: 0x3A246C?-0x???
+Made of ten? bytes
 First byte: ?
 Second byte: ?
 Third byte: X coordinate?
 Fourth byte: ?
 Fifth byte: Y coordinate?
 Sixth byte: ?
-Seventh byte: Destination door value?
+Seventh byte: Door type
+Eigth byte: ?
+Ninth byte: Destination Door
+Tenth byte: ?
 --
 
 Beginning at 0x3A24CC is the Level 1-1 Room 1 Door
+World 2 doors exist between 0x3A3000-0x3A4000
 
 ---
 
 Seventh byte door values:
 
-00 - Level 1-1 entrance
+00 - Level entrance
 01 - World 1 Map 'previous' door
-02 - World 1 Boss
+02 - World 1 Boss - didn't display door
 03 - Bomb Rally mini-game
 04 - Air Grind mini-game
 05 - Quick Draw mini-game
-06 - Door didn't work
-07 - Wheelie Arena, but museum info played
+06 - Door didn't work - didn't display door
+07 - Wheelie Arena, but museum info played - didn't display door
 08 - Actual Wheelie Arena
-09 - Game freezes
-0A - Game freezes
-0B - Game freezes
-0C - Game freezes
-0D - Game freezes
-0E - Game freezes
-0F - Game freezes
 From here on out, the game will freeze...
-10 -
+
+Ninth byte door values:
+Anytime the ninth byte is changed, the destination changes, but the door sprite doesn't load
+
+00 - Level 1-1 entrance
+01 - Level 1-2 entrance
+02 - Level 1-3 entrance
+03 - Level 1-4 entrance
+04 - World 1 Boss
+05 - Game Crashed
+
 
 ---
 
@@ -94,6 +101,8 @@ I didn't look at the enemies from
 0x30000-0x40000 Crashes after selecting file
 0x40000-0x50000 Crashes after world 1 animation
 0x50000-0x60000 Crashes after Kirby hits the ground in level 1
+0x50000-0x51000 Froze at Beam Kirby inital beam, possibly controls powerup behavior?
+
 0x60000-0x70000 Crashes after world 1 animation
 0x70000-0x80000 Crashes after world 1 animation
 0x80000-0x90000 Crashes right when first enemy loads
@@ -115,6 +124,7 @@ Game freezes when Kirby lands
 
 Changing 0x24BCB2 glitches out the ability enemies
 That row is of interest
+^ I had this in my notes from before, but I can't seem to recreate this, the game just crashes now
 
 Similar issue between 250000 and 260000
 
