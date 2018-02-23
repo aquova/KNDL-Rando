@@ -43,6 +43,61 @@ Values:
 
 -------------------------------------------------------------------------------
 
+Enemy values:
+
+*===========================================================================*
+| Byte Location | Enemy Number | Ability Value | Enemy Name                 |
++---------------+--------------+---------------+----------------------------+
+|               |      00      |      00       | Waddle Dee                 |
+|               |      01      |      11       | Rocky                      |
+|               |      02      |      0B       | Noddy                      |
+|               |      03      |      00       | Broom Hatter               |
+|               |      04      |      0D       | Pengi                      |
+|               |      05      |      06       | Laser Ball                 |
+|               |      06      |      0E       | Chilly                     |
+|               |      07      |      03       | Sir Kibble                 |
+|               |      08      |      00       | Cappy                      |
+| 742A4C        |      09      |      10       | Waddle Doo                 |
+|               |      0A      |      N/A      | Gordo                      |
+|               |      0B      |      15       | Cool Spook                 |
+|               |      0C      |      00       | Bronto Burt                |
+|               |      0D      |      00       | Kabu                       |
+|               |      0E      |      14       | Bomber                     |
+|               |      0F      |      ??       | Blew up immediately        |
+|               |      10      |      00       | Twizzy                     |
+|               |      11      |      N/A      | Shotzo                     |
+|               |      12      |      02       | Sparky                     |
+|               |      13      |      13       | Twister                    |
+|               |      14      |      00       | Squishy                    |
+|               |      15      |      00       | Scarfy                     |
+|               |      16      |      12       | Bubbles                    |
+|               |      17      |      0F       | Starman                    |
+|               |      18      |      01       | Hot Head                   |
+|               |      19      |      00       | Glunk                      |
+|               |      1A      |      00       | Slippy                     |
+|               |      1B      |      00       | Blipper                    |
+|               |      1C      |      04       | Sword Knight               |
+|               |      1D      |      04       | Blade Knight               |
+|               |      1E      |      00       | Poppy Bros. Jr.            |
+|               |      1F      |      00       | Poppy Bros. Jr. w/ Apple   |
+|               |      20      |      00       | Poppy Bros. Jr. w/ Tomato  |
+|               |      21      |      00       | Coner                      |
+|               |      22      |      08       | Wheelie                    |
+|               |      23      |      05       | Flamer                     |
+|               |      24      |      0C       | Needlous                   |
+|               |      25      |      18       | UFO                        |
+|               |      26      |      0A       | Parasol (No Waddle Dee)    |
+|               |      27      |      00       | Gip                        |
+|               |      28      |      ??       | Blew up immediately        |
+|               |      29      |      09       | Bonkers                    |
+*===============*==============*===============*============================*
+
+All others glitch out the game
+
+The very first enemy is located at: 0x35DD71
+
+-------------------------------------------------------------------------------
+
 Door values:
 
 KND Door Data:
@@ -165,20 +220,5 @@ Breaking it down, door and other sprites will gitch in and out, but still functi
 
 0x7E0000-0x7F0000 Crashes after selecting file
 This is the end of the game.
--------------------------------------------------------------------------------
-
-Enemy values:
-
----
-Try replacing 0x10 (beam) with 0x01 (fire)
-
-Still works for 0x100000-0x300000, 0x400000-0x700000
-0x3A200-0x3A300 - World map geometry is all messed up, couldn't tell
-Possibly more issues from 0x3A300-0x40000
-
-Background music was gone from 0x600000-0x700000
----
-
-Waddle Dee (Level 1-1 Room 1) - 0x742A4C
 -------------------------------------------------------------------------------
 
