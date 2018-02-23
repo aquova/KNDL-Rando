@@ -49,23 +49,23 @@ Enemy values:
 | Byte Location | Enemy Number | Ability Value | Enemy Name                 |
 +---------------+--------------+---------------+----------------------------+
 |               |      00      |      00       | Waddle Dee                 |
-|               |      01      |      11       | Rocky                      |
-|               |      02      |      0B       | Noddy                      |
-|               |      03      |      00       | Broom Hatter               |
-|               |      04      |      0D       | Pengi                      |
-|               |      05      |      06       | Laser Ball                 |
+| 7417C4        |      01      |      11       | Rocky                      |
+| 7429F4        |      02      |      0B       | Noddy                      |
+| 740BF8-740BFB |      03      |      00       | Broom Hatter               |
+| 740C38        |      04      |      0D       | Pengi                      |
+| 743344        |      05      |      06       | Laser Ball                 |
 |               |      06      |      0E       | Chilly                     |
 |               |      07      |      03       | Sir Kibble                 |
 |               |      08      |      00       | Cappy                      |
 | 742A4C        |      09      |      10       | Waddle Doo                 |
-|               |      0A      |      N/A      | Gordo                      |
+| N/A           |      0A      |      N/A      | Gordo                      |
 |               |      0B      |      15       | Cool Spook                 |
 |               |      0C      |      00       | Bronto Burt                |
 |               |      0D      |      00       | Kabu                       |
 |               |      0E      |      14       | Bomber                     |
-|               |      0F      |      ??       | Blew up immediately        |
+| ??            |      0F      |      ??       | Blew up immediately        |
 |               |      10      |      00       | Twizzy                     |
-|               |      11      |      N/A      | Shotzo                     |
+| N/A           |      11      |      N/A      | Shotzo                     |
 |               |      12      |      02       | Sparky                     |
 |               |      13      |      13       | Twister                    |
 |               |      14      |      00       | Squishy                    |
@@ -88,13 +88,14 @@ Enemy values:
 |               |      25      |      18       | UFO                        |
 |               |      26      |      0A       | Parasol (No Waddle Dee)    |
 |               |      27      |      00       | Gip                        |
-|               |      28      |      ??       | Blew up immediately        |
+| ??            |      28      |      ??       | Blew up immediately        |
 |               |      29      |      09       | Bonkers                    |
 *===============*==============*===============*============================*
 
 All others glitch out the game
 
 The very first enemy is located at: 0x35DD71
+Changing 0x74064A turned Waddle Dees into fast and exploding enemies
 
 -------------------------------------------------------------------------------
 

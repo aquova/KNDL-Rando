@@ -39,11 +39,6 @@ class Ui_MainWindow(object):
         self.enemyCheck = QtWidgets.QCheckBox(self.centralWidget)
         self.enemyCheck.setObjectName("enemyCheck")
         self.verticalLayout.addWidget(self.enemyCheck)
-        self.noAbilityCheck = QtWidgets.QCheckBox(self.centralWidget)
-        self.noAbilityCheck.setToolTip("")
-        self.noAbilityCheck.setStatusTip("")
-        self.noAbilityCheck.setObjectName("noAbilityCheck")
-        self.verticalLayout.addWidget(self.noAbilityCheck)
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem2)
         self.line = QtWidgets.QFrame(self.centralWidget)
@@ -85,12 +80,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Kirby\'s Adventure Randomizer"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Kirby: Nightmare in Dream Land Randomizer"))
         self.title.setText(_translate("MainWindow", "Kirby: Nightmare in Dream Land Randomizer - Version: "))
         self.seedLabel.setText(_translate("MainWindow", "Seed:"))
         self.enemyCheck.setText(_translate("MainWindow", "Randomize Enemies"))
-        self.noAbilityCheck.setText(_translate("MainWindow", "Randomize Enemies without Abilities"))
         self.findROMButton.setText(_translate("MainWindow", "Choose ROM Location"))
         self.randomizeButton.setText(_translate("MainWindow", "Randomize!"))
-        self.urlLabel.setText(_translate("MainWindow", "https://github.com/Aquova/KND-Rando"))
+        self.urlLabel.setText(_translate("MainWindow", "https://github.com/Aquova/KNDL-Rando"))
 
