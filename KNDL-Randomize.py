@@ -53,10 +53,10 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
             # Uses given input as seed, else randomly picks a new seed to use
             # AFAIK you can't get what the default seed is, so it needs to be changed to one we know
-            KA_seed = self.seedValue.text()
-            if KA_seed == "":
-                KA_seed = random.randint(0, 999999999)
-            random.seed(KA_seed)
+            KNDL_seed = self.seedValue.text()
+            if KNDL_seed == "":
+                KNDL_seed = random.randint(0, 999999999)
+            random.seed(KNDL_seed)
 
             if self.enemyCheck.isChecked():
                 if self.starRodCheck.isChecked():
@@ -70,7 +70,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                     rom_list[address] = new_enemy
 
             rom = bytes(rom_list)
-            new_rom = open('.'.join(self.rom_file.split(".")[:-1]) + "_" + str(KA_seed) + ".gba", 'wb')
+            new_rom = open('.'.join(self.rom_file.split(".")[:-1]) + "_" + str(KNDL_seed) + ".gba", 'wb')
             new_rom.write(rom)
             new_rom.close()
 

@@ -44,7 +44,7 @@ This will open the same application as the PC and Mac binaries.
 
 2. If you just have Python 3, there is a Command Line version of the program, which can be run via:
 
-`python3 KNDL-Randomize-CLI.py`
+`python3 KNDL-Simple.py`
 
 Make sure that your .gba file is located in the same folder as the program, then simply follow the instructions.
 
