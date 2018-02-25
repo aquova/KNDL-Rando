@@ -73,7 +73,14 @@
      </widget>
     </item>
     <item>
-     <spacer name="verticalSpacer_4">
+     <widget class="QCheckBox" name="starRodCheck">
+      <property name="text">
+       <string>Use Star Rod - EXPERIMENTAL</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_5">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>

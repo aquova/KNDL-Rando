@@ -13,12 +13,9 @@ ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0
                 "0D","0E","0F","10","11","12","13","14","15","16","17","18"]
 
 # ROM locations of enemy abilities
-ability_locations = ["7417C4", "7429F4", "740C38", "743344", "742A4C"]
-
-# ROM locations of enemies without abilities
-# neutral_locations = ["72B8F","72C37","72C67","72C4F","72CAF","72CC7","72E5F","72F1F",
-                    # "72E47","72FF7","72F4F","72DE7","72F7F","72FAF","72FC7","72F37"]
-
+ability_locations = ["7417C4", "7429F4", "740C38", "743344", "742A20", "7417F0", "742A4C",
+                     "7418A0", "740C64", "740C90", "7418F8", "742B28", "741924", "741950",
+                     "740CE8", "740D14", "741A58", "741A84", "740D6C", "740D98", "740DC4"]
 
 # Creating a custom exception, how fancy
 class HashError(Exception):
@@ -32,11 +29,11 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.randomizeButton.clicked.connect(self.runRandomizer)
         self.title.setText(self.title.text() + VERSION)
 
-        # Fades out noAbilityCheck if enemyCheck is not clicked
-        # self.noAbilityCheck.setEnabled(False)
-        # self.enemyCheck.toggled.connect(self.noAbilityCheck.setEnabled)
-        # self.enemyCheck.toggled.connect(
-        #     lambda checked: not checked and self.noAbilityCheck.setChecked(False))
+        # Fades out starRodCheck if not clicked
+        self.starRodCheck.setEnabled(False)
+        self.enemyCheck.toggled.connect(self.starRodCheck.setEnabled)
+        self.enemyCheck.toggled.connect(
+            lambda checked: not checked and self.starRodCheck.setChecked(False))
 
     # Opens ROM selector window, clears the previous path text
     def open_file(self):
@@ -62,8 +59,8 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             random.seed(KA_seed)
 
             if self.enemyCheck.isChecked():
-                # if self.noAbilityCheck.isChecked():
-                #     ability_locations.extend(neutral_locations)
+                if self.starRodCheck.isChecked():
+                    ability_values.append("19")
 
                 # Gives enemies new abilities based on random selection from file
                 for item in ability_locations:
