@@ -54,7 +54,7 @@ if __name__ == "__main__":
             rom_list[address] = new_enemy
 
         rom = bytes(rom_list)
-        new_rom = open('.'.join(rom_name.split(".")[:-1]) + "_" + str(KNDL_seed) + ".nes", 'wb')
+        new_rom = open('.'.join(rom_name.split(".")[:-1]) + "_" + str(KNDL_seed) + ".gba", 'wb')
         new_rom.write(rom)
         new_rom.close()
 
