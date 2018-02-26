@@ -60,4 +60,10 @@ If your emulator supports Lua scripts (such as Bizhawk), you are welcome to inst
 
 ## -- Version History --
 
+v1.0.0 - I've added support for changing Kirby's color to those from The Amazing Mirror
+
 v0.1.0 - Initial Release. All enemies with an ability are randomized. Mini-bosses and enemies normally without abilities are not supported. Star Rod is available, but very glitchy.
+
+## -- Special Thanks --
+
+The author of MapDeluxe, which helped me learn how to spawn in different enemies for testing.

@@ -18,7 +18,7 @@
     <item>
      <widget class="QLabel" name="title">
       <property name="text">
-       <string>Kirby: Nightmare in Dream Land Randomizer - Version: </string>
+       <string>Kirby: Nightmare in Dream Land - Version: </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -75,12 +75,144 @@
     <item>
      <widget class="QCheckBox" name="starRodCheck">
       <property name="text">
-       <string>Use Star Rod - EXPERIMENTAL</string>
+       <string>Use Star Rod</string>
       </property>
      </widget>
     </item>
     <item>
      <spacer name="verticalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0">
+       <widget class="QRadioButton" name="orangeColor">
+        <property name="text">
+         <string>Orange</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QRadioButton" name="randomColor">
+        <property name="text">
+         <string>Random</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Kirby Color:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QRadioButton" name="defaultColor">
+        <property name="text">
+         <string>Default (Pink)</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QRadioButton" name="carbonColor">
+        <property name="text">
+         <string>Carbon</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QRadioButton" name="redColor">
+        <property name="text">
+         <string>Red</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QRadioButton" name="chalkColor">
+        <property name="text">
+         <string>Chalk</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QRadioButton" name="emeraldColor">
+        <property name="text">
+         <string>Emerald</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QRadioButton" name="yellowColor">
+        <property name="text">
+         <string>Yellow</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QRadioButton" name="greenColor">
+        <property name="text">
+         <string>Green</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QRadioButton" name="cherryColor">
+        <property name="text">
+         <string>Cherry</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QRadioButton" name="oceanColor">
+        <property name="text">
+         <string>Ocean</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QRadioButton" name="sapphireColor">
+        <property name="text">
+         <string>Sapphire</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QRadioButton" name="grapeColor">
+        <property name="text">
+         <string>Grape</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QRadioButton" name="chocolateColor">
+        <property name="text">
+         <string>Chocolate</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QRadioButton" name="snowColor">
+        <property name="text">
+         <string>Snow</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_4">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
