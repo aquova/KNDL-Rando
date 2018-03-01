@@ -145,6 +145,7 @@ Take each value, multiply by 31/255 to get 5-bit values. Write them 0BBBBBGGGGGR
 Mirror: 0000BD77324A1146CE398C314A290821C6184A29E71CA514
 GBA Meta Knight: 0000607460744354435427282728DA48B5449138
 Red & Purple (Was a mistake, but looks kinda cool): 0000BD777D007D00550C550C2A1C2A1CD268B1548E44
+Stone: 00005D635D63784E784EB235EC18E71C7D2D171DF11C
 
 -------------------------------------------------------------------------------
 

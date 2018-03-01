@@ -181,75 +181,136 @@
          <property name="text">
           <string>Default (Pink)</string>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/pinkSprayCan.png</normaloff>icons/pinkSprayCan.png</iconset>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>Red</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/redSprayCan.png</normaloff>icons/redSprayCan.png</iconset>
          </property>
         </item>
         <item>
          <property name="text">
           <string>Orange</string>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/orangeSprayCan.png</normaloff>icons/orangeSprayCan.png</iconset>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>Yellow</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/yellowSprayCan.png</normaloff>icons/yellowSprayCan.png</iconset>
          </property>
         </item>
         <item>
          <property name="text">
           <string>Green</string>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/greenSprayCan.png</normaloff>icons/greenSprayCan.png</iconset>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>Cherry</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/cherrySprayCan.png</normaloff>icons/cherrySprayCan.png</iconset>
          </property>
         </item>
         <item>
          <property name="text">
           <string>Emerald</string>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/emeraldSprayCan.png</normaloff>icons/emeraldSprayCan.png</iconset>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>Ocean</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/oceanSprayCan.png</normaloff>icons/oceanSprayCan.png</iconset>
          </property>
         </item>
         <item>
          <property name="text">
           <string>Sapphire</string>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/sapphireSprayCan.png</normaloff>icons/sapphireSprayCan.png</iconset>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>Grape</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/grapeSprayCan.png</normaloff>icons/grapeSprayCan.png</iconset>
          </property>
         </item>
         <item>
          <property name="text">
           <string>Chocolate</string>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/chocolateSprayCan.png</normaloff>icons/chocolateSprayCan.png</iconset>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>Chalk</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/chalkSprayCan.png</normaloff>icons/chalkSprayCan.png</iconset>
          </property>
         </item>
         <item>
          <property name="text">
           <string>Snow</string>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/snowSprayCan.png</normaloff>icons/snowSprayCan.png</iconset>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>Carbon</string>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icons/carbonSprayCan.png</normaloff>icons/carbonSprayCan.png</iconset>
+         </property>
         </item>
         <item>
          <property name="text">
           <string>Mirror</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Stone</string>
          </property>
         </item>
         <item>
