@@ -6,7 +6,7 @@ from PyQt5 import QtWidgets
 import os, random, sys, hashlib
 from mainwindow import Ui_MainWindow
 
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",
@@ -78,6 +78,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         if self.rom_file:
             self.romDisplay.setText(self.rom_file)
 
+
     def selectedColor(self):
         if self.greenColor.isChecked():
             return 0
@@ -139,7 +140,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 new_color = self.selectedColor()
                 row = new_palette[new_color]
                 new_colors = []
-                for i in range(0, len(row) - 2, 2):
+                for i in range(0, len(row), 2):
                     new_colors.append(int(row[i:i+2],16))
 
                 # Replaces old color palettes with the new
@@ -147,6 +148,25 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                     color_address = int(item, 16)
                     for i in range(0, len(new_colors)):
                         rom_list[color_address + i] = new_colors[i]
+
+                # Want to change the color of the life icon to match
+                rom_list[int("5A56F2", 16)] = new_colors[0] # 16th byte - Outline
+                rom_list[int("5A56F3", 16)] = new_colors[1]
+                rom_list[int("5A56EE", 16)] = new_colors[4] # 14th byte - Main body
+                rom_list[int("5A56EF", 16)] = new_colors[5]
+                rom_list[int("5A56EA", 16)] = new_colors[12] # 12th byte - Body highlight
+                rom_list[int("5A56EB", 16)] = new_colors[13]
+                rom_list[int("5A56D8", 16)] = new_colors[18] # 3rd byte - Feet
+                rom_list[int("5A56D9", 16)] = new_colors[19]
+
+                # Changing the life icon also messes with the health bar palette
+                # So that needs to be changed too
+                rom_list[int("5A56D6", 16)] = new_colors[20]
+                rom_list[int("5A56D7", 16)] = new_colors[21]
+                rom_list[int("5A56DA", 16)] = new_colors[16]
+                rom_list[int("5A56DB", 16)] = new_colors[17]
+                rom_list[int("5A56DC", 16)] = new_colors[16]
+                rom_list[int("5A56DD", 17)] = new_colors[17]
 
             rom = bytes(rom_list)
             new_rom = open('.'.join(self.rom_file.split(".")[:-1]) + "_" + str(KNDL_seed) + ".gba", 'wb')

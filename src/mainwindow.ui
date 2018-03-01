@@ -6,300 +6,336 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>525</width>
-    <height>480</height>
+    <width>538</width>
+    <height>531</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Kirby: Nightmare in Dream Land Randomizer</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="title">
+   <widget class="QLabel" name="title">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>12</y>
+      <width>501</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kirby: Nightmare in Dream Land - Version: </string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="enemyCheck">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>118</y>
+      <width>147</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Randomize Enemies</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="starRodCheck">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>139</y>
+      <width>105</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Use Star Rod</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>432</y>
+      <width>505</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>490</y>
+      <width>505</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="randomizeButton">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>530</y>
+      <width>511</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Randomize!</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="urlLabel">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>594</y>
+      <width>511</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>https://github.com/Aquova/KNDL-Rando</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>446</y>
+      <width>501</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLineEdit" name="romDisplay">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="findROMButton">
+       <property name="text">
+        <string>Choose ROM Location</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>191</y>
+      <width>501</width>
+      <height>125</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="0">
+      <widget class="QRadioButton" name="orangeColor">
+       <property name="text">
+        <string>Orange</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QRadioButton" name="randomColor">
+       <property name="text">
+        <string>Random</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Kirby Color:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QRadioButton" name="defaultColor">
+       <property name="text">
+        <string>Default (Pink)</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QRadioButton" name="carbonColor">
+       <property name="text">
+        <string>Carbon</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QRadioButton" name="redColor">
+       <property name="text">
+        <string>Red</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QRadioButton" name="chalkColor">
+       <property name="text">
+        <string>Chalk</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QRadioButton" name="emeraldColor">
+       <property name="text">
+        <string>Emerald</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QRadioButton" name="yellowColor">
+       <property name="text">
+        <string>Yellow</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QRadioButton" name="greenColor">
+       <property name="text">
+        <string>Green</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QRadioButton" name="cherryColor">
+       <property name="text">
+        <string>Cherry</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QRadioButton" name="oceanColor">
+       <property name="text">
+        <string>Ocean</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QRadioButton" name="sapphireColor">
+       <property name="text">
+        <string>Sapphire</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QRadioButton" name="grapeColor">
+       <property name="text">
+        <string>Grape</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QRadioButton" name="chocolateColor">
+       <property name="text">
+        <string>Chocolate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QRadioButton" name="snowColor">
+       <property name="text">
+        <string>Snow</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>62</y>
+      <width>501</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="seedLabel">
+       <property name="text">
+        <string>Seed:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="seedValue"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>350</y>
+      <width>501</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Kirby Color:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <item>
       <property name="text">
-       <string>Kirby: Nightmare in Dream Land - Version: </string>
+       <string>Default (Pink)</string>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="seedLabel">
-        <property name="text">
-         <string>Seed:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="seedValue"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_6">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="enemyCheck">
+     </item>
+     <item>
       <property name="text">
-       <string>Randomize Enemies</string>
+       <string>Red</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="starRodCheck">
+     </item>
+     <item>
       <property name="text">
-       <string>Use Star Rod</string>
+       <string>Orange</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_5">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="2" column="0">
-       <widget class="QRadioButton" name="orangeColor">
-        <property name="text">
-         <string>Orange</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="1">
-       <widget class="QRadioButton" name="randomColor">
-        <property name="text">
-         <string>Random</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Kirby Color:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QRadioButton" name="defaultColor">
-        <property name="text">
-         <string>Default (Pink)</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="2">
-       <widget class="QRadioButton" name="carbonColor">
-        <property name="text">
-         <string>Carbon</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QRadioButton" name="redColor">
-        <property name="text">
-         <string>Red</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QRadioButton" name="chalkColor">
-        <property name="text">
-         <string>Chalk</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QRadioButton" name="emeraldColor">
-        <property name="text">
-         <string>Emerald</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QRadioButton" name="yellowColor">
-        <property name="text">
-         <string>Yellow</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QRadioButton" name="greenColor">
-        <property name="text">
-         <string>Green</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QRadioButton" name="cherryColor">
-        <property name="text">
-         <string>Cherry</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QRadioButton" name="oceanColor">
-        <property name="text">
-         <string>Ocean</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QRadioButton" name="sapphireColor">
-        <property name="text">
-         <string>Sapphire</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QRadioButton" name="grapeColor">
-        <property name="text">
-         <string>Grape</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QRadioButton" name="chocolateColor">
-        <property name="text">
-         <string>Chocolate</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QRadioButton" name="snowColor">
-        <property name="text">
-         <string>Snow</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_4">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLineEdit" name="romDisplay">
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="findROMButton">
-        <property name="text">
-         <string>Choose ROM Location</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="Line" name="line_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_3">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QPushButton" name="randomizeButton">
+     </item>
+     <item>
       <property name="text">
-       <string>Randomize!</string>
+       <string>Yellow</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <spacer name="verticalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <widget class="QLabel" name="urlLabel">
+     </item>
+     <item>
       <property name="text">
-       <string>https://github.com/Aquova/KNDL-Rando</string>
+       <string>Green</string>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cherry</string>
       </property>
-     </widget>
-    </item>
-   </layout>
+     </item>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
