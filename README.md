@@ -6,7 +6,7 @@ Randomization program for Kirby: Nightmare in Dream Land (KNDL) for GBA
 
 https://github.com/Aquova/KNDL-Rando
 
-Written by Austin Bricker (Aquova), 2017-2018
+Written by Austin Bricker (aquova), 2017-2018
 
 https://twitter.com/Aquova_
 
@@ -19,6 +19,11 @@ First is a .lua script intended to be used with BizHawk or similar lua-compatibl
 Secondly, there are two programs that edit the ROM, allowing it to be distributed and used with any emulator, as detailed below.
 However, while the abilites are randomized, they are always constant within that ROM.
 Ex. If a fire enemy now gives you the spark ability, ALL fire enemies will always give you the spark ability.
+
+## -- Features --
+
+- Randomizes which ability you gain from swallowing an enemy
+- Change Kirby's color to several different options, including all the colors from *Kirby and the Amazing Mirror*
 
 ## -- Usage --
 
@@ -59,6 +64,8 @@ If your emulator supports Lua scripts (such as Bizhawk), you are welcome to inst
 - The Star Rod, while available, is very experimental, and has many visual bugs.
 
 ## -- Version History --
+
+v1.0.1 - Fixed visual glitch of color going back to default during certain animations
 
 v1.0.0 - I've added support for changing Kirby's color to those from The Amazing Mirror
 
