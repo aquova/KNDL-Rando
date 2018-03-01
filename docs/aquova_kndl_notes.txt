@@ -136,6 +136,16 @@ Want to change 5A56D8-9, 5A56EA-B, 5A56EE-F, 5A56F2-5A56F3
 4th byte: FF18 = 1 11111 11000 11000
 5th byte: 9F2D = 1 00111 11001 01101
 
+Custom colors, made by Drschnaps
+How to make custom colors:
+Need 10 palettes in RGB (the other 6 are transparent, the outline (probably black), and 4 colors used for powerup accessory colors)
+Each color should be 0-255 (8-bits each, 24-bits total)
+Take each value, multiply by 31/255 to get 5-bit values. Write them 0BBBBBGGGGGRRRRR, turn into hex. Reverse first and second byte as GBA uses little endian.
+
+Mirror: 0000BD77324A1146CE398C314A290821C6184A29E71CA514
+GBA Meta Knight: 0000607460744354435427282728DA48B5449138
+Red & Purple (Was a mistake, but looks kinda cool): 0000BD777D007D00550C550C2A1C2A1CD268B1548E44
+
 -------------------------------------------------------------------------------
 
 Door values:

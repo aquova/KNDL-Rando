@@ -39,19 +39,22 @@ palette_locations = ["DC62A", "DC8AA", "DC96C", "DCB2A", "DCBAA", "DD0C4", "DD0E
                      "2476E4", "24A9FC", "53F4E6", "596D22", "599922", "5BA46E", "5BD09A", "5BF426",
                      "5C220E", "5C4AAA", "5C7452", "5C9B22", "5CCC90", "5CCCD2", "5E2C22", "609D42", "7DB192"]
 
-new_palette = ["2104F953F01BCF136D07880606068305FC055A051205", # Green
+new_palette = ["2104BF563F203C18571053084E082A043F543C383718", # Red
+               "2104DF07FF129F121F169F193911D10C5F05F9049104", # Orange
                "2104FF077F07FF06DD061606B1054C059F047C043604", # Yellow
-               "2104BF563F203C18571053084E082A043F543C383718", # Red
-               "2104FF7FFF7F9C731863734EEF3D6B2D5F35BB243718", # Snow
-               "21043146EF3DAD356B2D29250821C6189F0A1F067A05", # Carbon
+               "2104F953F01BCF136D07880606068305FC055A051205", # Green
+               "21047F7F7F721F66BF55FC3C74206D0CA432272EC621", # Cherry
+               "2104F873EF63684FA13A2136C12D6121BF2A1C169805", # Emerald
                "2104F57F927F0E7F8B7E067EA365E6408D7D2A71875C", # Ocean
                "2104577F907A2D72EB69615D0151A1402B60294C2838", # Sapphire
                "21041A7F977EF57D727D4F6CCD05AA383745B338302C", # Grape
-               "2104F873EF63684FA13A2136C12D6121BF2A1C169805", # Emerald
-               "2104DF07FF129F121F169F193911D10C5F05F9049104", # Orange
                "21049B4A3B36D82D7425111DCE148B10B41071082F04", # Chocolate
-               "21047F7F7F721F66BF55FC3C74206D0CA432272EC621", # Cherry
-               "2104FF7F9C7318639452EF3D6B2DE71C10428C312925"] # Chalk
+               "2104FF7F9C7318639452EF3D6B2DE71C10428C312925", # Chalk
+               "2104FF7FFF7F9C731863734EEF3D6B2D5F35BB243718", # Snow
+               "21043146EF3DAD356B2D29250821C6189F0A1F067A05", # Carbon
+               "0000324A1146CE398C314A290821C6184A29E71CA514", # Mirror
+               "0000BD77607460744354435427282728DA48B5449138", # GBA Meta Knight
+               "0000BD777D007D00550C550C2A1C2A1CD268B1548E44"] # Red & Purple mistake
 
 # Creating a custom exception, how fancy
 class HashError(Exception):
@@ -78,36 +81,11 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         if self.rom_file:
             self.romDisplay.setText(self.rom_file)
 
-
     def selectedColor(self):
-        if self.greenColor.isChecked():
-            return 0
-        elif self.yellowColor.isChecked():
-            return 1
-        elif self.redColor.isChecked():
-            return 2
-        elif self.snowColor.isChecked():
-            return 3
-        elif self.carbonColor.isChecked():
-            return 4
-        elif self.oceanColor.isChecked():
-            return 5
-        elif self.sapphireColor.isChecked():
-            return 6
-        elif self.grapeColor.isChecked():
-            return 7
-        elif self.emeraldColor.isChecked():
-            return 8
-        elif self.orangeColor.isChecked():
-            return 9
-        elif self.chocolateColor.isChecked():
-            return 10
-        elif self.cherryColor.isChecked():
-            return 11
-        elif self.chalkColor.isChecked():
-            return 12
-        elif self.randomColor.isChecked():
-            return random.randint(0,12)
+        c = self.comboBox.currentIndex()
+        if c == (len(new_palette) + 1):
+            return random.randint(0, len(new_palette)-1)
+        return (c - 1)
 
     def runRandomizer(self):
         try:
@@ -119,7 +97,6 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             rom_list = list(rom)
 
             # Uses given input as seed, else randomly picks a new seed to use
-            # AFAIK you can't get what the default seed is, so it needs to be changed to one we know
             KNDL_seed = self.seedValue.text()
             if KNDL_seed == "":
                 KNDL_seed = random.randint(0, 999999999)
@@ -136,7 +113,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                     new_enemy = int(new_enemy,16)
                     rom_list[address] = new_enemy
 
-            if self.defaultColor.isChecked() == False:
+            if self.comboBox.currentText() != "Default (Pink)":
                 new_color = self.selectedColor()
                 row = new_palette[new_color]
                 new_colors = []
@@ -150,6 +127,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                         rom_list[color_address + i] = new_colors[i]
 
                 # Want to change the color of the life icon to match
+                # TODO: Someday make this nicer
                 rom_list[int("5A56F2", 16)] = new_colors[0] # 16th byte - Outline
                 rom_list[int("5A56F3", 16)] = new_colors[1]
                 rom_list[int("5A56EE", 16)] = new_colors[4] # 14th byte - Main body
@@ -159,8 +137,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 rom_list[int("5A56D8", 16)] = new_colors[18] # 3rd byte - Feet
                 rom_list[int("5A56D9", 16)] = new_colors[19]
 
-                # Changing the life icon also messes with the health bar palette
-                # So that needs to be changed too
+                # Changing the life icon also messes with the health bar palette, so that needs to be changed too
                 rom_list[int("5A56D6", 16)] = new_colors[20]
                 rom_list[int("5A56D7", 16)] = new_colors[21]
                 rom_list[int("5A56DA", 16)] = new_colors[16]
