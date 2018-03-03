@@ -42,6 +42,11 @@ palette_locations = ["DC62A", "DC8AA", "DC96C", "DCB2A", "DCBAA", "DD0C4", "DD0E
                      "13C1CA", "14D2FE", "151A8C", "154644", "166F48", "175426", "18046A", "184692",
                      "1DD060", "1DEF1C", "2055C4", "20831C", "20B3BC", "20C0E8"]
 
+metaKnightLocations = ["226278", "227A60", "2290C0", "22B2AC", "22EB7C", "23118C", "231BDC", "232030",
+                       "2352B4", "235BB0", "238BA4", "238BC6", "23AC00", "23AD88", "23E944", "249BAE",
+                       "27D826", "2DFFEC", "2E000E", "2E24BC", "2E24DE", "2E692C", "2EA4BC", "2EA758",
+                       "2EE490", "2F0660", "2F1A5C", "2F3242"]
+
 # Palettes need to be in the same order as in the GUI
 new_palette = ["2104BF563F203C18571053084E082A043F543C383718", # Red
                "2104DF07FF129F121F169F193911D10C5F05F9049104", # Orange
@@ -65,6 +70,8 @@ new_palette = ["2104BF563F203C18571053084E082A043F543C383718", # Red
                "0000BD777D007D00550C550C2A1C2A1CD268B1548E44", # Red & Purple mistake
                "494DF06D7C7739739672F06DF061CE4D6A64E564A450", # KDL3 Blue mistake
                "00002F77A574A574C564C564A348AE352F774C6EA965"] # Blue and sky blue (may remove)
+
+metaKnightPalette = ["0000397F317E8E6D0C59DE513B39082C1D4C1848133CFF03DF025702FF7F"]
 
 # Creating a custom exception, how fancy
 class HashError(Exception):
@@ -91,10 +98,16 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         if self.rom_file:
             self.romDisplay.setText(self.rom_file)
 
-    def selectedColor(self):
-        c = self.comboBox.currentIndex()
+    def getKirbyColor(self):
+        c = self.kirbyComboBox.currentIndex()
         if c == (len(new_palette) + 1):
             return random.randint(0, len(new_palette)-1)
+        return (c - 1)
+
+    def getMKColor(self):
+        c = self.MKcomboBox.currentIndex()
+        if c == (len(metaKnightPalette) + 1):
+            return random.randint(0, len(metaKnightPalette)-1)
         return (c - 1)
 
     def runRandomizer(self):
@@ -123,8 +136,8 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                     new_enemy = int(new_enemy,16)
                     rom_list[address] = new_enemy
 
-            if self.comboBox.currentText() != "Default (Pink)":
-                new_color = self.selectedColor()
+            if self.kirbyComboBox.currentText() != "Default (Pink)":
+                new_color = self.getKirbyColor()
                 row = new_palette[new_color]
                 new_colors = []
                 for i in range(0, len(row), 2):
@@ -154,6 +167,19 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 rom_list[int("5A56DB", 16)] = new_colors[17]
                 rom_list[int("5A56DC", 16)] = new_colors[16]
                 rom_list[int("5A56DD", 17)] = new_colors[17]
+
+            if self.MKcomboBox.currentText() != "Default":
+                new_color = self.getMKColor()
+                row = metaKnightPalette[new_color]
+                new_colors = []
+                for i in range(0, len(row), 2):
+                    new_colors.append(int(row[i:i+2],16))
+
+                # Replaces old color palettes with the new
+                for item in metaKnightLocations:
+                    color_address = int(item, 16)
+                    for i in range(0, len(new_colors)):
+                        rom_list[color_address + i] = new_colors[i]
 
             rom = bytes(rom_list)
             new_rom = open('.'.join(self.rom_file.split(".")[:-1]) + "_" + str(KNDL_seed) + ".gba", 'wb')
