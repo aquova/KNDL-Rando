@@ -65,13 +65,14 @@ new_palette = ["2104BF563F203C18571053084E082A043F543C383718", # Red
                "00005D635D63784E784EB235EC18E71C7D2D171DF11C", # Stone
                "0000FF7FFA7FF57F347B6C7A8779E578357911791179", # Ice
                "0000BD77607460744354435427282728DA48B5449138", # GBA Meta Knight
-               "5325FB417D733C679C5AFB41F841D3397A29F914B410", # KDL3 Kirby
+               "5325FB417D733C679C5AFB41F841D3397A29F914B410", # KDL3 Pink
+               "494DF06D7C7739739672F06DF061CE4D6A64E564A450", # KDL3 Blue
                "00003D3FBD14BD14D914D914B20CAD593D3F5B32B925", # Waddle Dee
-               "0000BD777D007D00550C550C2A1C2A1CD268B1548E44", # Red & Purple mistake
-               "494DF06D7C7739739672F06DF061CE4D6A64E564A450", # KDL3 Blue mistake
-               "00002F77A574A574C564C564A348AE352F774C6EA965"] # Blue and sky blue (may remove)
+               "0000DE7B2A7664756475E16C405C2038D66AEF51083D", # Lololo
+               "0000DE7BDE451C2D1C2DB6186F0C2700F67A306E2861", # Lalala
+               "0000DE7BFF7F7B6FF75E524ACE394A297B6FF75E524A"] # Grayscale
 
-metaKnightPalette = ["0000397F317E8E6D0C59DE513B39082C1D4C1848133CFF03DF025702FF7F"]
+metaKnightPalette = ["0000397F317E8E6D0C59DE513B39082C1D4C1848133CFF03DF025702FF7F"] # Pink
 
 # Creating a custom exception, how fancy
 class HashError(Exception):
@@ -90,6 +91,18 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.enemyCheck.toggled.connect(self.starRodCheck.setEnabled)
         self.enemyCheck.toggled.connect(
             lambda checked: not checked and self.starRodCheck.setChecked(False))
+
+        # If noAbilitiesCheck is clicked, enemyCheck is disabled
+        self.noAbilitiesCheck.setEnabled(True)
+        self.enemyCheck.toggled.connect(self.noAbilitiesCheck.setDisabled)
+        self.enemyCheck.toggled.connect(
+            lambda checked: checked and self.noAbilitiesCheck.setChecked(False))
+
+        # If enemyCheck is clicked, noAbilitiesCheck is disabled
+        self.enemyCheck.setEnabled(True)
+        self.noAbilitiesCheck.toggled.connect(self.enemyCheck.setDisabled)
+        self.noAbilitiesCheck.toggled.connect(
+            lambda checked: checked and self.enemyCheck.setChecked(False))
 
     # Opens ROM selector window, clears the previous path text
     def open_file(self):
@@ -135,6 +148,11 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                     new_enemy = random.choice(ability_values)
                     new_enemy = int(new_enemy,16)
                     rom_list[address] = new_enemy
+
+            elif self.noAbilitiesCheck.isChecked():
+                for item in ability_locations:
+                    address = int(item, 16)
+                    rom_list[address] = 0 # Every enemy should be given the "0x00" value, or no ability
 
             if self.kirbyComboBox.currentText() != "Default (Pink)":
                 new_color = self.getKirbyColor()
