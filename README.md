@@ -74,3 +74,5 @@ v0.1.0 - Initial Release. All enemies with an ability are randomized. Mini-bosse
 ## -- Special Thanks --
 
 The author of MapDeluxe, which helped me learn how to spawn in different enemies for testing.
+
+DrSchnaps and Spriter's Resource for the palettes from *Kirby and the Amazing Mirror*, as well as some custom palettes.
