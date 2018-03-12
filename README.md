@@ -4,11 +4,11 @@ Kirby: Nightmare in Dream Land Randomizer
 
 Randomization program for Kirby: Nightmare in Dream Land (KNDL) for GBA
 
-https://github.com/Aquova/KNDL-Rando
+https://github.com/aquova/KNDL-Rando
 
 Written by Austin Bricker (aquova), 2017-2018
 
-https://twitter.com/Aquova_
+`https://twitter.com/aquova_`
 
 ## -- Overview --
 
@@ -16,14 +16,14 @@ Contained are programs to randomize the enemy abilities in Kirby: Nightmare in D
 
 First is a .lua script intended to be used with BizHawk or similar lua-compatible emulator. The lua script edits the RAM in real time, ensuring a completely random ability each time an enemy is swallowed. Keep in mind this is a work in progress, and some bugs have been known to occur.
 
-Secondly, there are two programs that edit the ROM, allowing it to be distributed and used with any emulator, as detailed below.
+Secondly, there is a program that edits the ROM, allowing it to be distributed and used with any emulator, as detailed below.
 However, while the abilites are randomized, they are always constant within that ROM.
 Ex. If a fire enemy now gives you the spark ability, ALL fire enemies will always give you the spark ability.
 
 ## -- Features --
 
 - Randomizes which ability you gain from swallowing an enemy
-- Change Kirby's color to several different options, including all the colors from *Kirby and the Amazing Mirror*
+- Change Kirby and Meta Knight's colors to several different options, including all the colors from *Kirby and the Amazing Mirror*
 
 ## -- Usage --
 
@@ -39,31 +39,30 @@ Run `KNDL-Randomize-PC.app`, found on the 'Releases' page. Select the options yo
 
 #### --- Linux/Python ---
 
-Linux users, or users who want to simply run the Python program itself, have two options.
+Linux users, or users who don't want to build it themselves, will have to build the binaries.
 
-1. If you have Python3, Qt5, and PyQt installed, you can run the following command in Terminal:
+1. Install Python3, Qt5, and PyQt5 using your favorite package manager.
+
+2. While in the 'src' directory, run the following command in Terminal:
 
 `python3 KNDL-Randomize.py`
 
 This will open the same application as the PC and Mac binaries.
 
-2. If you just have Python 3, there is a Command Line version of the program, which can be run via:
-
-`python3 KNDL-Simple.py`
-
-Make sure that your .gba file is located in the same folder as the program, then simply follow the instructions.
-
 #### --- Lua Compatible Emulator ---
 
-If your emulator supports Lua scripts (such as Bizhawk), you are welcome to instead use the `KNDL-Script.lua` script. This script edits the RAM in real time, allowing for complete randomization of Kirby's abilities, meaning that eating enemies of the same type may give different results.
+If your emulator supports Lua scripts (such as Bizhawk), you are welcome to instead use the `KNDL-Script.lua` script. This script edits the RAM in real time, allowing for complete randomization of Kirby's abilities, meaning that eating enemies of the same type may give different results. This script is in an incomplete state at the moment.
 
 ## -- Known Issues / Future Plans --
 
 - Enemies normally without abilities are not randomized
 - Mini-bosses are not randomized
 - The Star Rod, while available, is very experimental, and has many visual bugs.
+- Meta Knight's sword will default back to its original color during certain animations. This is due to the game handling his palette differently on occasion, and is unlikely to be fixed.
 
 ## -- Version History --
+
+v1.1.0 - Slighty modified GUI, added several more Kirby palettes. Added support for changing Meta Knight's palettes. Added spray can icons in the GUI. Remove 'KNDL-Simple' program.
 
 v1.0.1 - Fixed visual glitch of color going back to default during certain animations
 
