@@ -83,12 +83,12 @@ metaKnightPalettes = ["0000397F317E8E6D0C59DE513B39082C1D4C1848133CFF03DF025702F
                       "0000397F317E8E6D0C596932092A082CB2108F084D04FF03DF025702FF7F", # Green
                       "21048C318C314B2D8410630C210421042104210421048C316B2DA514EF3D"] # Mirror
 
-metaKnightSwordPalettes = ["0000D25F2D4F69360732", # Green
-                           "0000537FCF7A6C7AE779", # Blue
-                           "0000757AD37970798D64", # Purple
-                           "00001936B62D5225EF18", # Brown
-                           "00005D6E1D62BC511939", # Pink
-                           "0000FF7F7B6FF75E524A"] # White
+metaKnightSwordPalettes = ["0000D25F2D4F6936073212011614D25F", # Green
+                           "0000537FCF7A6C7AE77912011614537F", # Blue
+                           "0000757AD37970798D6412011614757A", # Purple
+                           "00001936B62D5225EF18120116141936", # Brown
+                           "00005D6E1D62BC511939120116145D6E", # Pink
+                           "0000FF7F7B6FF75E524A12011614FF7F"] # White
 
 # Creating a custom exception, how fancy
 class HashError(Exception):
