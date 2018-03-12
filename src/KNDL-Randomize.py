@@ -134,8 +134,14 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             return random.randint(0, len(metaKnightPalettes)-1)
         return (c - 1)
 
+    def getSwordColor(self):
+        c = self.swordComboBox.currentIndex()
+        if c == (len(metaKnightSwordPalettes) + 1):
+            return random.randint(0, len(metaKnightSwordPalettes)-1)
+        return (c - 1)
+
     def runRandomizer(self):
-        ry:
+        try:
             rom = open(self.romFile, 'rb').read()
             testHash = hashlib.md5(rom).hexdigest()
             # Checks for the correct ROM
@@ -165,7 +171,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                     address = int(item, 16)
                     romList[address] = 0 # Every enemy should be given the "0x00" value, or no ability
 
-            if self.kirbyComboBox.currentText() != "Default (Pink)":
+            if self.kirbyComboBox.currentIndex() != 0:
                 new_color = self.getKirbyColor()
                 row = kirbyPalettes[new_color]
                 new_colors = []
@@ -197,7 +203,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 romList[int("5A56DC", 16)] = new_colors[16]
                 romList[int("5A56DD", 17)] = new_colors[17]
 
-            if self.MKcomboBox.currentText() != "Default":
+            if self.MKcomboBox.currentIndex() != 0:
                 new_color = self.getMKColor()
                 row = metaKnightPalettes[new_color]
                 new_colors = []
@@ -206,6 +212,19 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
                 # Replaces old color palettes with the new
                 for item in metaKnightLocations:
+                    color_address = int(item, 16)
+                    for i in range(0, len(new_colors)):
+                        romList[color_address + i] = new_colors[i]
+
+            if self.swordComboBox.currentIndex() != 0:
+                new_color = self.getSwordColor()
+                row = metaKnightSwordPalettes[new_color]
+                new_colors = []
+                for i in range(0, len(row), 2):
+                    new_colors.append(int(row[i:i+2],16))
+
+                # Replaces old color palettes with the new
+                for item in metaKnightSwordLocations:
                     color_address = int(item, 16)
                     for i in range(0, len(new_colors)):
                         romList[color_address + i] = new_colors[i]

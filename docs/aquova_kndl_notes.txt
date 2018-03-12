@@ -172,6 +172,7 @@ Memory addresses:
 Meta Knight's Sword:
 May only need to change up to space
 Default: 0000FF03DF02DF015F01 12011614FF57
+Also: FE5E7F07150216066F018418FF7F0000
 Green: 0000D25F2D4F69360732
 
 Memory Addresses:
