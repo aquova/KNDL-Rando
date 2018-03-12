@@ -485,6 +485,26 @@
           <string>Blue</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>Purple</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Brown</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pink</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>White</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>

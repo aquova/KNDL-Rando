@@ -84,7 +84,11 @@ metaKnightPalettes = ["0000397F317E8E6D0C59DE513B39082C1D4C1848133CFF03DF025702F
                       "21048C318C314B2D8410630C210421042104210421048C316B2DA514EF3D"] # Mirror
 
 metaKnightSwordPalettes = ["0000D25F2D4F69360732", # Green
-                           "0000537FCF7A6C7AE779"] # Blue
+                           "0000537FCF7A6C7AE779", # Blue
+                           "0000757AD37970798D64", # Purple
+                           "00001936B62D5225EF18", # Brown
+                           "00005D6E1D62BC511939", # Pink
+                           "0000FF7F7B6FF75E524A"] # White
 
 # Creating a custom exception, how fancy
 class HashError(Exception):
