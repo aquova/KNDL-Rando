@@ -431,7 +431,7 @@
     <item row="6" column="0">
      <widget class="QCheckBox" name="starRodCheck">
       <property name="text">
-       <string>Use Star Rod</string>
+       <string>Use Star Rod - EXPERIMENTAL</string>
       </property>
      </widget>
     </item>
@@ -478,6 +478,11 @@
         <item>
          <property name="text">
           <string>Green</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Blue</string>
          </property>
         </item>
        </widget>
