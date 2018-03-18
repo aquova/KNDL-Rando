@@ -199,7 +199,15 @@ Sixth byte: ?
 Seventh byte: Door type
 Eigth byte: ?
 Ninth byte: Destination Door
-Tenth byte: ?
+Tenth byte: Exit coordinates?
+
+I *think* that it's actually handled two bytes at a time. Thus:
+Bytes 1-2: ??
+Bytes 3-4: X coordinate
+Bytes 5-6: Y coordinate
+Bytes 7-8: Door Type
+Bytes 9-10: Destination
+Bytes 11-12: Idk if this exists
 --
 
 Beginning at 0x3A24CC is the Level 1-1 Room 1 Door
@@ -229,7 +237,6 @@ Anytime the ninth byte is changed, the destination changes, but the door sprite 
 03 - Level 1-4 entrance
 04 - World 1 Boss
 05 - Game Crashed
-
 
 ---
 
