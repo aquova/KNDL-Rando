@@ -35,7 +35,7 @@ Run `KNDL-Randomize-PC.exe`, found on the 'Releases' page. Select the options yo
 
 #### --- macOS ---
 
-Run `KNDL-Randomize-PC.app`, found on the 'Releases' page. Select the options you desire, and select the location of your .gba KNDL ROM. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
+Run `KNDL-Randomize-Mac.app`, found on the 'Releases' page. Select the options you desire, and select the location of your .gba KNDL ROM. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
 
 #### --- Linux/Python ---
 
